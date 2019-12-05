@@ -5,7 +5,9 @@ import java.util.Scanner;
 public class Granne {
     public static void main(String[] args) {
 
-        // Read a file with information
+        /**
+         * A try catch to read the file with information about the conditions
+         */
         Scanner src = null;
         try {
             src  = new Scanner(new File("text.txt"));
@@ -13,10 +15,17 @@ public class Granne {
             e.printStackTrace();
         }
 
-        int nod = src.nextInt();
-        int kanter = src.nextInt();
+        /**
+         * Gets the number of nodes in the chosen graph
+         * Gets the number of edges in the chosen graph
+         */
+        int nodes = src.nextInt();
+        int edges = src.nextInt();
 
-        for (int i = 0; i < kanter; i++) {
+        /**
+         * For loop to go get the distances between the nodes
+         */
+        for (int i = 0; i < edges; i++) {
             int pos = src.nextInt();
             int pos2 = 0;
             int pos3 = 0;
