@@ -37,7 +37,13 @@ public class graph {
                     weight = tgb.nextInt();
                 }
                 for (int j = 0; j < nodes.size(); j++) {
+                    if (j == from) {
 
+                    } else if (j == to) {
+
+                    } else {
+                        new node(from);
+                    }
                 }
                 if (nodes.contains()) {
 
