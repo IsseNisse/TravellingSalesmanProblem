@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class graph {
@@ -9,10 +10,12 @@ public class graph {
         private int from;
         private int to;
         private int weight;
-        private int fromNode;
-        private int toNode;
+        private node fromNode;
+        private node toNode;
+        private  int position1;
+        private  int position2;
         ArrayList<edge> edges = new ArrayList<>();
-        ArrayList<Integer> nodes = new ArrayList<>();
+        ArrayList<node> nodes = new ArrayList<>();
 
         public granneOOP(int start, int node, int edge) {
             this.start = start;
@@ -38,16 +41,18 @@ public class graph {
                 }
                 for (int j = 0; j < nodes.size(); j++) {
                     if (j == from) {
-
-                    } else if (j == to) {
-
+                        position1 = Arrays.asList(nodes).indexOf(j);
+                        fromNode = nodes.get(position1);
+                    }
+                    if (j == to) {
+                        position2 = Arrays.asList(nodes).indexOf(j);
+                        toNode = nodes.get(position2);
                     } else {
                         new node(from);
+                        new node(to);
                     }
                 }
-                if (nodes.contains()) {
-
-                }
+                new edge(fromNode, toNode, weight);
             }
         }
     }
