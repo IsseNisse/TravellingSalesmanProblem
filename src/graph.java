@@ -43,16 +43,19 @@ public class graph {
                     if (j == from) {
                         position1 = Arrays.asList(nodes).indexOf(j);
                         fromNode = nodes.get(position1);
-                    }
-                    if (j == to) {
+                    } else {
+                        node node1 = new node(from);
+                        nodes.add(node1);
+                    } if (j == to) {
                         position2 = Arrays.asList(nodes).indexOf(j);
                         toNode = nodes.get(position2);
                     } else {
-                        new node(from);
-                        new node(to);
+                        node node2 = new node(to);
+                        nodes.add(node2);
                     }
                 }
-                new edge(fromNode, toNode, weight);
+                edge edgeTotal = new edge(fromNode, toNode, weight);
+                edges.add(edgeTotal);
             }
         }
     }
