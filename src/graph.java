@@ -55,22 +55,25 @@ public class graph {
                 if (j == from) {
                     position1 = Arrays.asList(nodes).indexOf(j);
                     fromNode = nodes.get(position1);
-                } else {
-                    node1 = new node(from);
-                    nodes.add(node1);
+
                 }
                 if (j == to) {
                     position2 = Arrays.asList(nodes).indexOf(j);
                     toNode = nodes.get(position2);
-                } else {
-                    node2 = new node(to);
-                    nodes.add(node2);
                 }
+            }
+            if (fromNode == null) {
+                fromNode = new node(from);
+                nodes.add(fromNode);
+            }
+            if (toNode == null) {
+                toNode = new node(to);
+                nodes.add(toNode);
             }
             edge edgeTotal = new edge(fromNode, toNode, weight);
             edges.add(edgeTotal);
-            node1.addedge(edgeTotal);
-            node2.addedge(edgeTotal);
+            fromNode.addedge(edgeTotal);
+            toNode.addedge(edgeTotal);
         }
     }
 

@@ -15,7 +15,7 @@ public class Granne {
             ArrayList<edge> edges = node.getEdges(node);
             for (int j = 0; j < edges.size(); j++) {
                int minIndex = edges.indexOf(j);
-
+                System.out.println(minIndex);
             }
         }
     }
