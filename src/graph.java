@@ -17,6 +17,7 @@ public class graph {
     private int position2;
     private node node1;
     private node node2;
+    private int target;
     ArrayList<edge> edges = new ArrayList<>();
     ArrayList<node> nodes = new ArrayList<>();
 
@@ -41,10 +42,6 @@ public class graph {
         node = tgb.nextInt();
         edge = tgb.nextInt();
 
-        for (int i = 0; i < 3; i++) {
-
-        }
-
         for (int i = 0; i < edge; i++) {
             from = tgb.nextInt();
             if (tgb.hasNext()) {
@@ -52,14 +49,12 @@ public class graph {
                 weight = tgb.nextInt();
             }
             for (int j = 0; j < nodes.size(); j++) {
-                if (j == from) {
-                    position1 = Arrays.asList(nodes).indexOf(j);
-                    fromNode = nodes.get(position1);
+                if (nodes.get(j).getNode1() == from) {
+                    fromNode = nodes.get(j);
 
                 }
-                if (j == to) {
-                    position2 = Arrays.asList(nodes).indexOf(j);
-                    toNode = nodes.get(position2);
+                if (nodes.get(j).getNode1() == to) {
+                    toNode = nodes.get(j);
                 }
             }
             if (fromNode == null) {

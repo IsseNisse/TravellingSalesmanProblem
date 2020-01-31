@@ -28,4 +28,8 @@ public class node {
     public ArrayList<edge> getEdges(node node) {
         return edges;
     }
+
+    public int getNode1() {
+        return node1;
+    }
 }

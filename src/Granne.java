@@ -9,6 +9,7 @@ public class Granne {
         int totalDistance;
 
         graph graph = new graph();
+        System.out.println(graph.nodes);
         node node = new node(graph.start);
 
         for (int i = 0; i < graph.node; i++) {
