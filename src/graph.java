@@ -11,8 +11,6 @@ public class graph {
     private int from;
     private int to;
     private int weight;
-    private node fromNode;
-    private node toNode;
     private int position1;
     private int position2;
     private node node1;
@@ -43,6 +41,8 @@ public class graph {
         edge = tgb.nextInt();
 
         for (int i = 0; i < edge; i++) {
+            node fromNode = null;
+            node toNode = null;
             from = tgb.nextInt();
             if (tgb.hasNext()) {
                 to = tgb.nextInt();
