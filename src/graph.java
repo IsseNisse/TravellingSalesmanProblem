@@ -75,4 +75,8 @@ public class graph {
     public int getStart() {
         return start;
     }
+
+    public ArrayList<node> getNodes() {
+        return nodes;
+    }
 }

@@ -25,7 +25,7 @@ public class node {
      * @return
      * @param node
      */
-    public ArrayList<edge> getEdges(node node) {
+    public ArrayList<edge> getEdges() {
         return edges;
     }
 
