@@ -21,6 +21,7 @@ public class graph {
 
     /**
      * Constructor to create a new graph
+     * Constructor to create a new graph
      */
     public graph() {
         read();
@@ -36,6 +37,7 @@ public class graph {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+        assert tgb != null;
         start = tgb.nextInt();
         node = tgb.nextInt();
         edge = tgb.nextInt();
@@ -79,4 +81,5 @@ public class graph {
     public ArrayList<node> getNodes() {
         return nodes;
     }
+
 }

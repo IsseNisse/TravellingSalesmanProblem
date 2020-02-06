@@ -7,13 +7,14 @@ import java.util.Scanner;
 public class Granne {
     public static void main(String[] args) {
         int totalDistance;
-        int shortest = 0;
         int total = 0;
 
         graph graph = new graph();
-        node currentNode = new node(graph.start);
+        node currentNode;
 
         for (int i = 0; i < graph.getNodes().size(); i++) {
+            int shortest = 0;
+            currentNode = graph.getNodes().get(i);
             ArrayList<edge> edges = currentNode.getEdges();
             for (int j = 0; j < edges.size(); j++) {
                 if (shortest == 0) {
@@ -23,6 +24,7 @@ public class Granne {
                 }
             }
             total = total + shortest;
+            System.out.println(total);
         }
         System.out.println(total);
     }
