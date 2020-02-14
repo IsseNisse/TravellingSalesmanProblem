@@ -4,28 +4,29 @@ public class Granne {
     public static void main(String[] args) {
         int totalDistance;
         int total = 0;
-        ArrayList<edge> chosenOnes = new ArrayList<>();
+        ArrayList<node> chosenOnes = new ArrayList<>();
 
         graph graph = new graph();
         node currentNode;
+        node firstNode = graph.getNodes().get(0);
+        currentNode = graph.getNodes().get(0);
 
         for (int i = 0; i < graph.getNodes().size(); i++) {
             int shortest = 0;
             edge chosen = null;
-            currentNode = graph.getNodes().get(i);
             ArrayList<edge> edges = currentNode.getEdges();
-            for (int j = 0; j < edges.size(); j++) {
-                if (!chosenOnes.contains(edges.get(j))) {
-                    if (shortest == 0) {
-                        shortest = edges.get(j).getWeight();
-                    } else if (edges.get(j).getWeight() < shortest) {
-                        chosen = edges.get(j);
-                        shortest = edges.get(j).getWeight();
-                    }
-                }
+
+            chosen = currentNode.getNeighbour(chosenOnes, shortest, currentNode, firstNode);
+            chosenOnes.add(currentNode);
+            int shortest2 = chosen.getWeight();
+            if (currentNode == chosen.getNode1()) {
+                currentNode = chosen.getNode2();
+            } else {
+                currentNode = chosen.getNode1();
             }
-            chosenOnes.add(chosen);
-            total = total + shortest;
+
+
+            total = total + shortest2;
             System.out.println(total);
         }
         System.out.println(total);
