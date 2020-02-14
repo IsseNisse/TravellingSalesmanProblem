@@ -38,4 +38,12 @@ public class edge {
     public int getWeight() {
         return weight;
     }
+
+    public node getOtherNode(node currentNode) {
+        if (node1.equals(currentNode)) {
+            return node2;
+        } else {
+            return node1;
+        }
+    }
 }

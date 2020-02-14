@@ -53,7 +53,7 @@ public class node {
     public edge getNeighbour(ArrayList<node> chosenOnes, int shortest, node currentNode, node firstNode) {
         edge chosen = null;
         for (int j = 0; j < edges.size(); j++) {
-            if (!chosenOnes.contains(edges.get(j))) {
+            if (!chosenOnes.contains(edges.get(j).getOtherNode(currentNode))) {
                 if (shortest == 0) {
                     shortest = edges.get(j).getWeight();
                     chosen = edges.get(j);
@@ -64,5 +64,6 @@ public class node {
             }
         }
         return chosen;
+
     }
 }
