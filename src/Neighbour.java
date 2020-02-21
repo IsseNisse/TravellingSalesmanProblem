@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Granne {
+public class Neighbour {
     public static void main(String[] args) {
         int totalDistance;
         int total = 0;
@@ -26,7 +26,6 @@ public class Granne {
             }
 
             total = total + shortest2;
-            System.out.println(total);
         }
         edge last = currentNode.getEdges().get(0);
         int lastWeight = last.getWeight();

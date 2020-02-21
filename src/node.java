@@ -66,4 +66,37 @@ public class node {
         return chosen;
 
     }
+
+    void printArr(ArrayList<edge> a, int n)
+    {
+        for (int i = 0; i < n; i++)
+            System.out.print(a.get(i) + " ");
+        System.out.println();
+    }
+
+    void heapPermutation(ArrayList<edge> a, int size, int n)
+    {
+
+        if (size == 1)
+            printArr(a,n);
+
+        for (int i = 0; i < size; i++)
+        {
+            heapPermutation(a, size -1, n);
+
+            if (size % 2 == 1)
+            {
+                edge temp = a.get(0);
+                a.set(0, a.get(size - 1));
+                a.set(size - 1, temp);
+            }
+
+            else
+            {
+                edge temp = a.get(i);
+                a.set(i, a.get(size - 1));
+                a.set(size - 1, temp);
+            }
+        }
+    }
 }
