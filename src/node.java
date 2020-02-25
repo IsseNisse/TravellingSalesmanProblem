@@ -67,32 +67,37 @@ public class node {
 
     }
 
-    void printArr(ArrayList<edge> a, int n)
-    {
+    void printArr(ArrayList<edge> a, int n) {
         for (int i = 0; i < n; i++)
             System.out.print(a.get(i) + " ");
         System.out.println();
     }
 
-    void heapPermutation(ArrayList<edge> a, int size, int n)
-    {
+    void heapPermutation(ArrayList<edge> a, int size, int n, node firstNode) {
+        ArrayList<edge> edges = new ArrayList<>();
+        ArrayList<edge> path = new ArrayList<>();
+        edge e = a.get(a.size() - 1);
+        edge home = null;
+        node node = e.getOtherNode(firstNode);
+        for (int j = 0; j < node.getEdges().size(); j++) {
+            ArrayList<edge> lastEdges = node.getEdges();
+            if (lastEdges.contains(firstNode.getEdges().get(j))) {
+                home = lastEdges.get(j);
+            }
+        }
 
         if (size == 1)
+            a.add(home);
             printArr(a,n);
 
-        for (int i = 0; i < size; i++)
-        {
-            heapPermutation(a, size -1, n);
+        for (int i = 0; i < size; i++) {
+            heapPermutation(a, size -1, n, firstNode);
 
-            if (size % 2 == 1)
-            {
+            if (size % 2 == 1) {
                 edge temp = a.get(0);
                 a.set(0, a.get(size - 1));
                 a.set(size - 1, temp);
-            }
-
-            else
-            {
+            } else {
                 edge temp = a.get(i);
                 a.set(i, a.get(size - 1));
                 a.set(size - 1, temp);

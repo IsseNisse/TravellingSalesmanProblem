@@ -4,6 +4,6 @@ public class BruteForce {
         graph graph = new graph();
         node startNode = graph.getNodes().get(0);
 
-        startNode.heapPermutation(startNode.getEdges(), startNode.getEdges().size(), startNode.getEdges().size());
+        startNode.heapPermutation(startNode.getEdges(), startNode.getEdges().size(), startNode.getEdges().size(), startNode);
     }
 }
