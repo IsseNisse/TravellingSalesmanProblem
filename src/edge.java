@@ -46,4 +46,9 @@ public class edge {
             return node1;
         }
     }
+
+    @Override
+    public String toString() {
+        return node1.getNode1() + "-" + node2.getNode1() + "(" + weight +')';
+    }
 }

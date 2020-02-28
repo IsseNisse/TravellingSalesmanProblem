@@ -50,6 +50,7 @@ public class node {
         return node1;
     }
 
+
     public edge getNeighbour(ArrayList<node> chosenOnes, int shortest, node currentNode, node firstNode) {
         edge chosen = null;
         for (int j = 0; j < edges.size(); j++) {
@@ -67,41 +68,41 @@ public class node {
 
     }
 
-    void printArr(ArrayList<edge> a, int n) {
-        for (int i = 0; i < n; i++)
-            System.out.print(a.get(i) + " ");
+    void printArr(ArrayList<node> a, int n) {
+        for (int i = 0; i < a.size(); i++)
+            System.out.print(a.get(i).toString() + " ");
         System.out.println();
     }
 
-    void heapPermutation(ArrayList<edge> a, int size, int n, node firstNode) {
-        ArrayList<edge> edges = new ArrayList<>();
-        ArrayList<edge> path = new ArrayList<>();
-        edge e = a.get(a.size() - 1);
-        edge home = null;
-        node node = e.getOtherNode(firstNode);
-        for (int j = 0; j < node.getEdges().size(); j++) {
-            ArrayList<edge> lastEdges = node.getEdges();
-            if (lastEdges.contains(firstNode.getEdges().get(j))) {
-                home = lastEdges.get(j);
-            }
+    void heapPermutation(ArrayList<node> a, int size, int n, node firstNode) {
+        ArrayList<ArrayList<edge>> path = new ArrayList<>();
+
+        if (size == 1) {
+            printArr(a, n);
         }
 
-        if (size == 1)
-            a.add(home);
-            printArr(a,n);
-
         for (int i = 0; i < size; i++) {
-            heapPermutation(a, size -1, n, firstNode);
+            heapPermutation(a, size - 1, n, firstNode);
 
             if (size % 2 == 1) {
-                edge temp = a.get(0);
+                node temp = a.get(0);
                 a.set(0, a.get(size - 1));
                 a.set(size - 1, temp);
             } else {
-                edge temp = a.get(i);
+                node temp = a.get(i);
                 a.set(i, a.get(size - 1));
                 a.set(size - 1, temp);
             }
         }
+    }
+
+    public edge getEdge(node firstNode) {
+        edge edge = null;
+        for (int i = 0; i < edges.size(); i++) {
+            if (edges.contains(firstNode)) {
+                edge = edges.get(i);
+            }
+        }
+        return edge;
     }
 }
