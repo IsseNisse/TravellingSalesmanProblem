@@ -4,6 +4,7 @@ import java.util.Objects;
 public class node {
     private int node1;
     ArrayList<edge> edges = new ArrayList<edge>();
+    ArrayList<ArrayList<node>> path = new ArrayList<>();
 
     /**
      * Constructor to create a new node
@@ -74,10 +75,11 @@ public class node {
         System.out.println();
     }
 
-    void heapPermutation(ArrayList<node> a, int size, int n, node firstNode) {
-        ArrayList<ArrayList<edge>> path = new ArrayList<>();
+    ArrayList<ArrayList<node>> heapPermutation(ArrayList<node> a, int size, int n, node firstNode) {
+
 
         if (size == 1) {
+            path.add(a);
             printArr(a, n);
         }
 
@@ -94,12 +96,13 @@ public class node {
                 a.set(size - 1, temp);
             }
         }
+        return path;
     }
 
     public edge getEdge(node firstNode) {
         edge edge = null;
         for (int i = 0; i < edges.size(); i++) {
-            if (edges.contains(firstNode)) {
+            if (edges.contains(firstNode.getEdges())) {
                 edge = edges.get(i);
             }
         }
