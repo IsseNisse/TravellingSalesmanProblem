@@ -17,22 +17,28 @@ public class BruteForce {
             ArrayList<edge> path = new ArrayList<>();
             for (int j = 0; j < perms.get(j).size(); j++) {
                 node node1 = perms.get(j).get(j);
+                path.add(startNode.getEdge(node1));
                 node node2 = perms.get(j).get(j + 1);
                 edge edge = node1.getEdge(node2);
                 path.add(edge);
+
             }
+
             allPaths.add(path);
         }
         for (int i = 0; i < allPaths.size(); i++) {
             int totalW = 0;
+            ArrayList<edge> shortestPath;
             for (int j = 0; j < allPaths.get(j).size(); j++) {
                 int w = allPaths.get(j).get(j).getWeight();
                 totalW = totalW + w;
-                if (shortestW == 0) {
-                    shortestW = totalW;
-                } else if (totalW < shortestW) {
-                    shortestW = totalW;
-                }
+            }
+            if (shortestW == 0) {
+                shortestW = totalW;
+                shortestPath = allPaths.get(i);
+            } else if (totalW < shortestW) {
+                shortestW = totalW;
+                shortestPath = allPaths.get(i);
             }
         }
     }
