@@ -15,14 +15,17 @@ public class BruteForce {
 
         for (int i = 0; i < perms.size(); i++) {
             ArrayList<edge> path = new ArrayList<>();
+            node node1 = null;
             for (int j = 0; j < perms.get(j).size(); j++) {
-                node node1 = perms.get(j).get(j);
-                path.add(startNode.getEdge(node1));
+                node1 = perms.get(j).get(j);
                 node node2 = perms.get(j).get(j + 1);
                 edge edge = node1.getEdge(node2);
                 path.add(edge);
 
             }
+            node last = perms.get(j).get(perms.get(j).size() -1);
+            path.add(startNode.getEdge(node1));
+            path.add(last.getEdge(startNode));
 
             allPaths.add(path);
         }
