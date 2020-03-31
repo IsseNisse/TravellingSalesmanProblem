@@ -102,7 +102,9 @@ public class node {
     public edge getEdge(node firstNode) {
         edge edge = null;
         for (int i = 0; i < edges.size(); i++) {
-            if (edges.contains(firstNode.getEdges())) {
+            if (edges.get(i).getNode1().equals(firstNode)) {
+                edge = edges.get(i);
+            } else if (edges.get(i).getNode2().equals(firstNode)) {
                 edge = edges.get(i);
             }
         }

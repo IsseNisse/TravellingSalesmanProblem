@@ -9,6 +9,7 @@ public class BruteForce {
         nodes.remove(0);
         ArrayList<ArrayList<edge>> allPaths = new ArrayList<>();
         int shortestW = 0;
+        ArrayList<edge> shortestPath = null;
 
         /*startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);*/
         ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);
@@ -16,24 +17,28 @@ public class BruteForce {
         for (int i = 0; i < perms.size(); i++) {
             ArrayList<edge> path = new ArrayList<>();
             node node1 = null;
-            for (int j = 0; j < perms.get(j).size(); j++) {
-                node1 = perms.get(j).get(j);
-                node node2 = perms.get(j).get(j + 1);
+            node node2 = null;
+            for (int j = 0; j < perms.get(i).size() -1; j++) {
+                if (node1 == null) {
+                    node1 = perms.get(i).get(j);
+                } else {
+                    node1 = path.get(j -1).getNode2();
+                }
+                node2 = perms.get(i).get(j + 1);
                 edge edge = node1.getEdge(node2);
                 path.add(edge);
 
             }
-            node last = perms.get(j).get(perms.get(j).size() -1);
-            path.add(startNode.getEdge(node1));
+            node last = perms.get(i).get(perms.get(i).size() -1);
+            path.add(startNode.getEdge(perms.get(i).get(1)));
             path.add(last.getEdge(startNode));
-
             allPaths.add(path);
         }
         for (int i = 0; i < allPaths.size(); i++) {
             int totalW = 0;
-            ArrayList<edge> shortestPath;
-            for (int j = 0; j < allPaths.get(j).size(); j++) {
-                int w = allPaths.get(j).get(j).getWeight();
+
+            for (int j = 0; j < allPaths.get(i).size(); j++) {
+                int w = allPaths.get(i).get(j).getWeight();
                 totalW = totalW + w;
             }
             if (shortestW == 0) {
@@ -44,5 +49,7 @@ public class BruteForce {
                 shortestPath = allPaths.get(i);
             }
         }
+        System.out.println(shortestPath);
+        System.out.println(shortestW);
     }
 }
