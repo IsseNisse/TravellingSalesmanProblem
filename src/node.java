@@ -79,7 +79,8 @@ public class node {
 
 
         if (size == 1) {
-            path.add(a);
+            ArrayList<node> copy = new ArrayList<>(a);
+            path.add(copy);
             printArr(a, n);
         }
 
