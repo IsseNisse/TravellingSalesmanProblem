@@ -6,13 +6,14 @@ public class BruteForce {
         graph graph = new graph();
         node startNode = graph.getNodes().get(0);
         ArrayList<node> nodes = graph.getNodes();
-        nodes.remove(0);
+        ArrayList<node> nodesCopy = new ArrayList<>(nodes);
+        nodesCopy.remove(0);
         ArrayList<ArrayList<edge>> allPaths = new ArrayList<>();
         int shortestW = 0;
         ArrayList<edge> shortestPath = null;
 
         /*startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);*/
-        ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);
+        ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodes, nodesCopy.size(), nodesCopy.size(), startNode);
 
         for (int i = 0; i < perms.size(); i++) {
             ArrayList<edge> path = new ArrayList<>();
@@ -25,7 +26,11 @@ public class BruteForce {
                     node1 = path.get(j -1).getNode2();
                 }
                 node2 = perms.get(i).get(j + 1);
-                edge edge = node1.getEdge(node2);
+                if (node2.getEdge(node1) == null) {
+                    System.out.println(i);
+                    System.out.println(j);
+                }
+                edge edge = node2.getEdge(node1);
                 path.add(edge);
 
             }
