@@ -77,7 +77,6 @@ public class node {
 
     ArrayList<ArrayList<node>> heapPermutation(ArrayList<node> a, int size, int n, node firstNode) {
 
-
         if (size == 1) {
             ArrayList<node> copy = new ArrayList<>(a);
             path.add(copy);

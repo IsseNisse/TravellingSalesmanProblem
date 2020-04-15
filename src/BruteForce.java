@@ -13,7 +13,7 @@ public class BruteForce {
         ArrayList<edge> shortestPath = null;
 
         /*startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);*/
-        ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodes, nodesCopy.size(), nodesCopy.size(), startNode);
+        ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);
 
         for (int i = 0; i < perms.size(); i++) {
             ArrayList<edge> path = new ArrayList<>();
@@ -31,11 +31,12 @@ public class BruteForce {
                     System.out.println(j);
                 }
                 edge edge = node2.getEdge(node1);
+                //edge = new edge(node1, node2, edge.getWeight());
                 path.add(edge);
 
             }
             node last = perms.get(i).get(perms.get(i).size() -1);
-            path.add(startNode.getEdge(perms.get(i).get(1)));
+            //path.add(startNode.getEdge(perms.get(i).get(0)));
             path.add(last.getEdge(startNode));
             allPaths.add(path);
         }
