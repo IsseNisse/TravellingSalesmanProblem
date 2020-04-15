@@ -40,7 +40,7 @@ public class BruteForce {
 
             }
             node last = perms.get(i).get(perms.get(i).size() -1);
-            path.add(0, startNode.getEdge(perms.get(i).get(0)));
+            path.add(0, startNode.getEdge(path.get(0).getNode1()));
             edge lastEdge = last.getEdge(startNode);
             if (lastEdge.getNode1() != path.get(path.size() -1).getNode2()) {
                 lastEdge = new edge(last, startNode, lastEdge.getWeight());
@@ -63,7 +63,7 @@ public class BruteForce {
                 shortestPath = allPaths.get(i);
             }
         }
-        System.out.println(allPaths.get(0));
+        System.out.println(allPaths.get(5));
         System.out.println(shortestPath);
         System.out.println(shortestW);
     }
