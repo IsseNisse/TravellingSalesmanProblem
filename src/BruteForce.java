@@ -13,7 +13,7 @@ public class BruteForce {
         ArrayList<edge> shortestPath = null;
 
         /*startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);*/
-        ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);
+        ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodesCopy, nodesCopy.size(), nodesCopy.size(), startNode);
 
         for (int i = 0; i < perms.size(); i++) {
             ArrayList<edge> path = new ArrayList<>();
@@ -31,13 +31,21 @@ public class BruteForce {
                     System.out.println(j);
                 }
                 edge edge = node2.getEdge(node1);
-                //edge = new edge(node1, node2, edge.getWeight());
+                if (j > 0) {
+                    if (edge.getNode1() != path.get(j - 1).getNode2()) {
+                        edge = new edge(node1, node2, edge.getWeight());
+                    }
+                }
                 path.add(edge);
 
             }
             node last = perms.get(i).get(perms.get(i).size() -1);
-            //path.add(startNode.getEdge(perms.get(i).get(0)));
-            path.add(last.getEdge(startNode));
+            path.add(0, startNode.getEdge(perms.get(i).get(0)));
+            edge lastEdge = last.getEdge(startNode);
+            if (lastEdge.getNode1() != path.get(path.size() -1).getNode2()) {
+                lastEdge = new edge(last, startNode, lastEdge.getWeight());
+            }
+            path.add(lastEdge);
             allPaths.add(path);
         }
         for (int i = 0; i < allPaths.size(); i++) {
@@ -55,6 +63,7 @@ public class BruteForce {
                 shortestPath = allPaths.get(i);
             }
         }
+        System.out.println(allPaths.get(0));
         System.out.println(shortestPath);
         System.out.println(shortestW);
     }
