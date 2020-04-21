@@ -27,7 +27,12 @@ public class graph {
     public void read() {
         Scanner tgb = null;
         try {
-            tgb = new Scanner(new File("graph1.txt"));
+            // Graph 1 is the graph from the example in my scientific report
+            // Graph 2 is a graph of the 10 largest cities in Sweden
+            // Graph 3 is a smaller made up graph
+            // Graph 4 is a graph of the 19 most visited countries of 2019
+            // Graph 5 is the same as graph 4 but is reduced to only 11 nodes/most visited countries
+            tgb = new Scanner(new File("graph4.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

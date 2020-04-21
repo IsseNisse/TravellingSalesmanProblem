@@ -110,7 +110,7 @@ public class node {
         if (size == 1) {
             ArrayList<node> copy = new ArrayList<>(a);
             path.add(copy);
-            printArr(a, n);
+            //printArr(a, n);
         }
 
         for (int i = 0; i < size; i++) {
