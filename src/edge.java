@@ -39,6 +39,11 @@ public class edge {
         return weight;
     }
 
+    /**
+     * Function to get the other node connected to an edge
+     * @param currentNode the node that is known
+     * @return return the other node connected to the edge
+     */
     public node getOtherNode(node currentNode) {
         if (node1.equals(currentNode)) {
             return node2;
@@ -47,6 +52,10 @@ public class edge {
         }
     }
 
+    /**
+     * Function to get the whole edge in a readable format
+     * @return
+     */
     @Override
     public String toString() {
         return node1.getNode1() + "-" + node2.getNode1() + "(" + weight +')';

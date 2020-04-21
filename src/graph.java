@@ -11,17 +11,11 @@ public class graph {
     private int from;
     private int to;
     private int weight;
-    private int position1;
-    private int position2;
-    private node node1;
-    private node node2;
-    private int target;
     ArrayList<edge> edges = new ArrayList<>();
     ArrayList<node> nodes = new ArrayList<>();
 
     /**
-     * Constructor to create a new graph
-     * Constructor to create a new graph
+     * Function to call for and make a new graph
      */
     public graph() {
         read();
@@ -74,10 +68,10 @@ public class graph {
         }
     }
 
-    public int getStart() {
-        return start;
-    }
-
+    /**
+     * Get the arrayList that contains all the nodes
+     * @return the arrayList
+     */
     public ArrayList<node> getNodes() {
         return nodes;
     }

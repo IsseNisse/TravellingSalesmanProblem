@@ -24,6 +24,11 @@ public class node {
         edges.add(edgeTotal);
     }
 
+    /**
+     * Function to check if two nodes are the same
+     * @param o object to compere
+     * @return return false or true
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -32,27 +37,39 @@ public class node {
         return node1 == node.node1;
     }
 
+    /**
+     * Function to get the hashcode from a node
+     * @return hashcode for node1
+     */
     @Override
     public int hashCode() {
         return Objects.hash(node1);
     }
 
     /**
-     * get the value of the arrayList edges
-     *
-     * @param node
+     * Get the arrayList containing the edges for the chosen node
      * @return
      */
     public ArrayList<edge> getEdges() {
         return edges;
     }
 
+    /**
+     * Get method to return node1
+     * @return node1
+     */
     public int getNode1() {
         return node1;
     }
 
-
-    public edge getNeighbour(ArrayList<node> chosenOnes, int shortest, node currentNode, node firstNode) {
+    /**
+     * Function to check which edge is the shortest one from where the program is
+     * @param chosenOnes arrayList of already chosen edges
+     * @param shortest shortest weight
+     * @param currentNode the node that the program is currently on
+     * @return return the shortest edge
+     */
+    public edge getNeighbour(ArrayList<node> chosenOnes, int shortest, node currentNode) {
         edge chosen = null;
         for (int j = 0; j < edges.size(); j++) {
             if (!chosenOnes.contains(edges.get(j).getOtherNode(currentNode))) {
@@ -69,12 +86,25 @@ public class node {
 
     }
 
+    /**
+     * print out all permutations
+     * @param a all nodes in path
+     * @param n the number of nodes
+     */
     void printArr(ArrayList<node> a, int n) {
         for (int i = 0; i < a.size(); i++)
             System.out.print(a.get(i).toString() + " ");
         System.out.println();
     }
 
+    /**
+     * Function to make permutations on all nodes except the starting node
+     * @param a all node in one path
+     * @param size the size arraylist
+     * @param n the number of nodes in arraylist
+     * @param firstNode the first node
+     * @return the path
+     */
     ArrayList<ArrayList<node>> heapPermutation(ArrayList<node> a, int size, int n, node firstNode) {
 
         if (size == 1) {
@@ -99,6 +129,11 @@ public class node {
         return path;
     }
 
+    /**
+     * Function to get the edge between to given nodes
+     * @param firstNode one of the two given nodes
+     * @return the edge between the given nodes
+     */
     public edge getEdge(node firstNode) {
         edge edge = null;
         for (int i = 0; i < edges.size(); i++) {
