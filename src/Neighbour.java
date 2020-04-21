@@ -10,7 +10,7 @@ public class Neighbour {
         node currentNode;
         node firstNode = graph.getNodes().get(0);
         currentNode = graph.getNodes().get(0);
-
+        long startTime = System.nanoTime();
         for (int i = 0; i < graph.getNodes().size() -1; i++) {
             int shortest = 0;
             edge chosen = null;
@@ -30,6 +30,12 @@ public class Neighbour {
         edge last = currentNode.getEdges().get(0);
         int lastWeight = last.getWeight();
         total = total + lastWeight;
+        long endTime = System.nanoTime();
+        long timeElapsed = endTime - startTime;
         System.out.println(total);
+        System.out.println("Execution time in nanoseconds  : " + timeElapsed);
+
+        System.out.println("Execution time in milliseconds : " +
+                timeElapsed / 1000000);
     }
 }

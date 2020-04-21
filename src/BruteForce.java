@@ -68,8 +68,8 @@ public class BruteForce {
 
         System.out.println(shortestPath);
         System.out.println(shortestW);
-        System.out.println("Execution time in nanoseconds  : " + timeElapsed);
 
+        System.out.println("Execution time in nanoseconds  : " + timeElapsed);
         System.out.println("Execution time in milliseconds : " +
                 timeElapsed / 1000000);
 
