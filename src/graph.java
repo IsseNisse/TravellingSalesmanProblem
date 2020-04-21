@@ -33,7 +33,7 @@ public class graph {
     public void read() {
         Scanner tgb = null;
         try {
-            tgb = new Scanner(new File("text.txt"));
+            tgb = new Scanner(new File("graph1.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
