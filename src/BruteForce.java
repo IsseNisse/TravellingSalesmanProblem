@@ -13,6 +13,7 @@ public class BruteForce {
         ArrayList<edge> shortestPath = null;
 
         /*startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);*/
+        long startTime = System.nanoTime();
         ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodesCopy, nodesCopy.size(), nodesCopy.size(), startNode);
 
         for (int i = 0; i < perms.size(); i++) {
@@ -61,11 +62,16 @@ public class BruteForce {
                 shortestW = totalW;
                 shortestPath = allPaths.get(i);
             }
-            System.out.println(shortestPath);
-            System.out.println(totalW);
         }
-        //System.out.println(allPaths);
+        long endTime = System.nanoTime();
+        long timeElapsed = endTime - startTime;
+
         System.out.println(shortestPath);
         System.out.println(shortestW);
+        System.out.println("Execution time in nanoseconds  : " + timeElapsed);
+
+        System.out.println("Execution time in milliseconds : " +
+                timeElapsed / 1000000);
+
     }
 }
