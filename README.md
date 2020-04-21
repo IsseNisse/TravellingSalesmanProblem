@@ -1,4 +1,4 @@
-<a href="https://via.tt.se/data/images/00114/76485ddc-e62c-4493-a4f9-9034de566c2b.png/social"><img src="https://via.tt.se/data/images/00114/76485ddc-e62c-4493-a4f9-9034de566c2b.png/social" alt="FVCproductions"></a>
+<a href="https://via.tt.se/data/images/00114/76485ddc-e62c-4493-a4f9-9034de566c2b.png/social"><img src="https://via.tt.se/data/images/00114/76485ddc-e62c-4493-a4f9-9034de566c2b.png/social" alt="NTI Gymnasiet logo"></a>
 
 # TravellingSalesmanProblem
 
@@ -6,119 +6,58 @@
 
 <a href="https://media-exp1.licdn.com/dms/image/C4E12AQF7r5JVkRnuxA/article-cover_image-shrink_600_2000/0?e=1587600000&v=beta&t=VLR5D8vXD99BhVaRKjnRVBFSQDDrg-P6s7g2-HBFIN0"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF7r5JVkRnuxA/article-cover_image-shrink_600_2000/0?e=1587600000&v=beta&t=VLR5D8vXD99BhVaRKjnRVBFSQDDrg-P6s7g2-HBFIN0" alt="FVCproductions"></a>
 
-- Most people will glance at your `README`, *maybe* star it, and leave
-- Ergo, people should understand instantly what your project is about based on your repo
-
-> Tips
-
-- HAVE WHITE SPACE
-- MAKE IT PRETTY
-- GIFS ARE REALLY COOL
-
-> GIF Tools
-
-- Use <a href="http://recordit.co/" target="_blank">**Recordit**</a> to create quicks screencasts of your desktop and export them as `GIF`s.
-- For terminal sessions, there's <a href="https://github.com/chjj/ttystudio" target="_blank">**ttystudio**</a> which also supports exporting `GIF`s.
-
-**Recordit**
-
-![Recordit GIF](http://g.recordit.co/iLN6A0vSD8.gif)
-
-**ttystudio**
-
-![ttystudio GIF](https://raw.githubusercontent.com/chjj/ttystudio/master/img/example.gif)
-
 ---
 
-## Table of Contents (Optional)
-
-> If your `README` has a lot of info, section headers might be nice.
-
-- [Installation](#installation)
-- [Features](#features)
-- [Contributing](#contributing)
-- [Team](#team)
-- [FAQ](#faq)
-- [Support](#support)
-- [License](#license)
-
-
----
-
-## Example (Optional)
-
-```javascript
-// code away!
-
-let generateProject = project => {
-  let code = [];
-  for (let js = 0; js < project.length; js++) {
-    code.push(js);
-  }
-};
-```
-
----
-
-## Installation
-
-- All the `code` required to get started
-- Images of what it should look like
 
 ### Clone
 
-- Clone this repo to your local machine using `https://github.com/fvcproductions/SOMEREPO`
-
-### Setup
-
-- If you want more syntax highlighting, format your code like this:
-
-> update and install this package first
-
-```shell
-$ brew update
-$ brew install fvcproductions
-```
-
-> now install npm and bower packages
-
-```shell
-$ npm install
-$ bower install
-```
-
-- For all the possible languages that support syntax highlithing on GitHub (which is basically all of them), refer <a href="https://github.com/github/linguist/blob/master/lib/linguist/languages.yml" target="_blank">here</a>.
+- Clone this repo to your local machine using `https://github.com/IsseNisse/TravellingSalesmanProblem.git`
 
 ---
+
+## How to make a text file that is compatible with this program
+This program is reads the texfile from number to number and then from row to row. The first 3 rows in the text file only contains 1 number each. The first row is the node where you start. The second row contains the number of nodes in the graph. The third row contains the total amount of edges that exist in the graph. After those three rows all the remaining rows are the same. Each of the remaining rows represent an edge. The first number of the edge is the first node connected to the edge and the second number in the row is the second node connected to the edge. The third and final number is the weight of the edge. An example of this is show below.
+
+### Example
+
+```
+1
+5
+10
+1 2 39
+1 4 20
+1 5 12
+1 3 45
+2 3 20
+2 4 28
+5 2 42
+3 5 48
+3 4 40
+4 5 18
+```
+
+---
+
 
 ## Features
 ## Usage (Optional)
-## Documentation (Optional)
-## Tests (Optional)
+This program can be used in many differnet applications to calculate the shortest path between given points.
 
-- Going into more detail on code and technologies used
-- I utilized this nifty <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" target="_blank">Markdown Cheatsheet</a> for this sample `README`.
+
+## Documentation (Optional)
+All documentation is available through the commits on this repository.
+https://github.com/IsseNisse/TravellingSalesmanProblem/commits/master
+
+## Tests (Optional)
+This program is made entirely in java and done so by using Intellij.
 
 ---
 
-## Contributing
+## Team
 
-> To get started...
-
-### Step 1
-
-- **Option 1**
-    - 🍴 Fork this repo!
-
-- **Option 2**
-    - 👯 Clone this repo to your local machine using `https://github.com/joanaz/HireDot2.git`
-
-### Step 2
-
-- **HACK AWAY!** 🔨🔨🔨
-
-### Step 3
-
-- 🔃 Create a new pull request using <a href="https://github.com/joanaz/HireDot2/compare/" target="_blank">`https://github.com/joanaz/HireDot2/compare/`</a>.
+| <a href="https://github.com/IsseNisse" target="_blank">**IsseNisse**</a> | 
+| :---: |
+| [![FVCproductions](https://avatars1.githubusercontent.com/u/42838033?s=460&u=5ca747aea619b8f599920589c64cc12d1661f99b&v=4?s=200)](https://github.com/IsseNisse)  |
+| <a href="https://github.com/IsseNisse" target="_blank">`https://github.com/IsseNisse`</a>
 
 ---
