@@ -2,7 +2,7 @@
 
 # TravellingSalesmanProblem
 
-> This is a project to find the shortest way in a given graph with the help of two different methods, the nearest neighbour method and brute force
+This is a project to find the shortest way in a given graph with the help of two different methods, the nearest neighbour method and brute force
 
 <a href="https://media-exp1.licdn.com/dms/image/C4E12AQF7r5JVkRnuxA/article-cover_image-shrink_600_2000/0?e=1587600000&v=beta&t=VLR5D8vXD99BhVaRKjnRVBFSQDDrg-P6s7g2-HBFIN0"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF7r5JVkRnuxA/article-cover_image-shrink_600_2000/0?e=1587600000&v=beta&t=VLR5D8vXD99BhVaRKjnRVBFSQDDrg-P6s7g2-HBFIN0" alt="FVCproductions"></a>
 
