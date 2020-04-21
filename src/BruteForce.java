@@ -17,13 +17,14 @@ public class BruteForce {
 
         for (int i = 0; i < perms.size(); i++) {
             ArrayList<edge> path = new ArrayList<>();
+            path.add(0, startNode.getEdge(perms.get(i).get(0)));
             node node1 = null;
             node node2 = null;
             for (int j = 0; j < perms.get(i).size() -1; j++) {
                 if (node1 == null) {
                     node1 = perms.get(i).get(j);
                 } else {
-                    node1 = path.get(j -1).getNode2();
+                    node1 = path.get(j).getNode2();
                 }
                 node2 = perms.get(i).get(j + 1);
                 if (node2.getEdge(node1) == null) {
@@ -31,16 +32,14 @@ public class BruteForce {
                     System.out.println(j);
                 }
                 edge edge = node2.getEdge(node1);
-                if (j > 0) {
-                    if (edge.getNode1() != path.get(j - 1).getNode2()) {
+                    if (edge.getNode1() != path.get(j).getNode2()) {
                         edge = new edge(node1, node2, edge.getWeight());
                     }
-                }
                 path.add(edge);
 
             }
             node last = perms.get(i).get(perms.get(i).size() -1);
-            path.add(0, startNode.getEdge(path.get(0).getNode1()));
+
             edge lastEdge = last.getEdge(startNode);
             if (lastEdge.getNode1() != path.get(path.size() -1).getNode2()) {
                 lastEdge = new edge(last, startNode, lastEdge.getWeight());
@@ -62,8 +61,10 @@ public class BruteForce {
                 shortestW = totalW;
                 shortestPath = allPaths.get(i);
             }
+            System.out.println(shortestPath);
+            System.out.println(totalW);
         }
-        System.out.println(allPaths.get(5));
+        //System.out.println(allPaths);
         System.out.println(shortestPath);
         System.out.println(shortestW);
     }
