@@ -1,17 +1,10 @@
-<a href="http://fvcproductions.com"><img src="https://avatars1.githubusercontent.com/u/4284691?v=3&s=200" title="FVCproductions" alt="FVCproductions"></a>
-
-<!-- [![FVCproductions](https://avatars1.githubusercontent.com/u/4284691?v=3&s=200)](http://fvcproductions.com) -->
-
-***INSERT GRAPHIC HERE (include hyperlink in image)***
+<a href="https://via.tt.se/data/images/00114/76485ddc-e62c-4493-a4f9-9034de566c2b.png/social"><img src="https://via.tt.se/data/images/00114/76485ddc-e62c-4493-a4f9-9034de566c2b.png/social" alt="FVCproductions"></a>
 
 # TravellingSalesmanProblem
 
 > This is a project to find the shortest way in a given graph with the help of two different methods, the nearest neighbour method and brute force
 
-
-***INSERT ANOTHER GRAPHIC HERE***
-
-[![INSERT YOUR GRAPHIC HERE](http://i.imgur.com/dt8AUb6.png)]()
+<a href="https://media-exp1.licdn.com/dms/image/C4E12AQF7r5JVkRnuxA/article-cover_image-shrink_600_2000/0?e=1587600000&v=beta&t=VLR5D8vXD99BhVaRKjnRVBFSQDDrg-P6s7g2-HBFIN0"><img src="https://media-exp1.licdn.com/dms/image/C4E12AQF7r5JVkRnuxA/article-cover_image-shrink_600_2000/0?e=1587600000&v=beta&t=VLR5D8vXD99BhVaRKjnRVBFSQDDrg-P6s7g2-HBFIN0" alt="FVCproductions"></a>
 
 - Most people will glance at your `README`, *maybe* star it, and leave
 - Ergo, people should understand instantly what your project is about based on your repo
