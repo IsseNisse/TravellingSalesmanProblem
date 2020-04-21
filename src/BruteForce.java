@@ -12,7 +12,6 @@ public class BruteForce {
         int shortestW = 0;
         ArrayList<edge> shortestPath = null;
 
-        /*startNode.heapPermutation(nodes, nodes.size(), nodes.size(), startNode);*/
         long startTime = System.nanoTime();
         ArrayList<ArrayList<node>> perms = startNode.heapPermutation(nodesCopy, nodesCopy.size(), nodesCopy.size(), startNode);
 

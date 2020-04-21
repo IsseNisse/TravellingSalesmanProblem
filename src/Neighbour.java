@@ -16,7 +16,7 @@ public class Neighbour {
             edge chosen = null;
             ArrayList<edge> edges = currentNode.getEdges();
 
-            chosen = currentNode.getNeighbour(chosenOnes, shortest, currentNode, firstNode);
+            chosen = currentNode.getNeighbour(chosenOnes, shortest, currentNode);
             chosenOnes.add(currentNode);
             int shortest2 = chosen.getWeight();
             if (currentNode == chosen.getNode1()) {
