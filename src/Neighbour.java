@@ -2,7 +2,6 @@ import java.util.ArrayList;
 
 public class Neighbour {
     public static void main(String[] args) {
-        int totalDistance;
         int total = 0;
         ArrayList<node> chosenOnes = new ArrayList<>();
 

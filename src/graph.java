@@ -32,7 +32,7 @@ public class graph {
             // Graph 3 is a smaller made up graph
             // Graph 4 is a graph of the 19 most visited countries of 2019
             // Graph 5 is the same as graph 4 but is reduced to only 11 nodes/most visited countries
-            tgb = new Scanner(new File("graph4.txt"));
+            tgb = new Scanner(new File("graph5.txt"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
