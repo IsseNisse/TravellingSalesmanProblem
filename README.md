@@ -40,15 +40,15 @@ This program is reads the texfile from number to number and then from row to row
 
 
 ## Features
-### Usage (Optional)
+### Usage
 This program can be used in many differnet applications to calculate the shortest path between given points.
 
 
-### Documentation (Optional)
+### Documentation
 All documentation is available through the commits on this repository.
 https://github.com/IsseNisse/TravellingSalesmanProblem/commits/master
 
-### Tests (Optional)
+### Tests
 This program is made entirely in java and done so by using Intellij.
 
 ---
